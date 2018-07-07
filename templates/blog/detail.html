@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+{% block page_title %}{{ results.blog.title }}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>{{ results.blog.title }}</h2>
+            <p>
+                <span class="badge badge-pill badge-info">分类1</span>
+                <span class="badge badge-pill badge-info">分类2</span>
+            </p>
+        </div>
+        <div class="col-md-6">
+                <p class="text-secondary">
+                    <a href="#">{{ results.blog.author }}</a>
+                    <span>更新于 {{ results.blog.update_time }}</span>
+                </p>
+            </div>
+            <div class="col-md-6 text-right">
+                <p class="text-secondary">
+                    <span>阅读：45</span>
+                </p>
+            </div>
+        <div class="col-md-12">
+            <p>
+                {{ results.blog.content }}
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}

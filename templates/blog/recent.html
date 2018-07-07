@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+{% block page_title %}最近文章{% endblock %}
+
+{% block content %}
+<div class="container">
+    {% for article in results.articles %}
+	<div class="row mb-3">
+        <div class="col-md-12">
+            <h3><a href="/blog/{{ article.id }}/">{{ article.title }}</a></h3>
+            <p>
+                <span class="badge badge-pill badge-info">分类1</span>
+                <span class="badge badge-pill badge-info">分类2</span>
+            </p>
+            <p>
+                {{ article.content }}
+            </p>
+        </div>
+        <div class="col-md-6">
+            <p class="text-secondary">
+                <a href="#">{{ article.author }}</a>
+                <span>更新于 {{ article.update_time }}</span>
+            </p>
+        </div>
+        <div class="col-md-6 text-right">
+            <p class="text-secondary">
+                <span>阅读：45</span>
+            </p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
